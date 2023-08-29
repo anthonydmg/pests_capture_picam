@@ -7,7 +7,8 @@ os.makedirs("./images", exist_ok=True)
 picam = Picamera2()
 capture_config = picam.create_still_configuration()
 picam.start()
-while True:
+
+for i in range(10):
    time.sleep(2)
    timestr =  time.strftime("%Y%m%d-%H%M%S")
    image_path = f"./images/image_2mgpx_{timestr}.jpg"
