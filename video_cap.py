@@ -13,10 +13,10 @@ for i in range(100):
 
     writer.write(frame)
     time.sleep(0.2)
-   #cv2.imshow('frame', frame)
+    cv2.imshow('frame', frame)
 
-    #if cv2.waitKey(1) & 0xFF == 27:
-    #    break
+    if cv2.waitKey(1) & 0xFF == ord('s'):
+        break
 
 
 video.release()
