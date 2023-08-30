@@ -9,6 +9,7 @@ camera = PiCamera()
 camera.resolution = (2592, 1944)
 camera.framerate = 30
 camera.iso = 100
+camera.start_preview()
 
 sleep(2)
 for filename in camera.capture_continuous('./images/img{counter:03d}.jpg'):
