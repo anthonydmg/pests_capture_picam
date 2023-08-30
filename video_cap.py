@@ -3,7 +3,7 @@ import time
 import os
 
 path_videos = "./videos"
-os.makedirs(path_videos)
+os.makedirs(path_videos, exist_ok= True)
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
