@@ -12,9 +12,9 @@ camera.iso = 100
 camera.start_preview()
 
 sleep(2)
-for filename in camera.capture_continuous('./images/img{counter:03d}.jpg'):
-    print('Captured %s' % filename)
-    sleep(1) # wait 5 minutes
-
+while True:
+    timestr =  time.strftime("%Y%m%d-%H%M%S")
+    image_path = f"./images/image_5mgpx_{timestr}.jpg"
+    camera.capture(image_path)
 
 
