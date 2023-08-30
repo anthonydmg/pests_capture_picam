@@ -8,11 +8,11 @@ os.makedirs(path_videos)
 video= cv2.VideoCapture(0)
 width= int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height= int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
-print(f"Resolution Video:({width},{height})")
+print(f"\nResolution Video:({width},{height})")
 timestr =  time.strftime("%Y%m%d-%H%M%S")
 writer= cv2.VideoWriter(f'{path_videos}/video_{timestr}.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 10, (width,height))
 
-for i in range(100):
+while True:
     ret,frame= video.read()
 
     writer.write(frame)
@@ -20,7 +20,6 @@ for i in range(100):
 
     if cv2.waitKey(100) & 0xFF == ord('s'):
         break
-
 
 video.release()
 writer.release()
