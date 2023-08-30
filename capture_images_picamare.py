@@ -11,7 +11,7 @@ camera.framerate = 30
 camera.iso = 100
 
 sleep(2)
-for filename in camera.capture_continuous('/images/img{counter:03d}.jpg'):
+for filename in camera.capture_continuous('./images/img{counter:03d}.jpg'):
     print('Captured %s' % filename)
     sleep(300) # wait 5 minutes
 
