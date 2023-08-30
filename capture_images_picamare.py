@@ -16,5 +16,6 @@ while True:
     timestr =  time.strftime("%Y%m%d-%H%M%S")
     image_path = f"./images/image_5mgpx_{timestr}.jpg"
     camera.capture(image_path)
-
+    print(f"captura: {image_path}")
+    sleep(1)
 
