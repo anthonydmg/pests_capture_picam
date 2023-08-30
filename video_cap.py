@@ -12,7 +12,7 @@ width= int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height= int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 print(f"\nResolution Video:({width},{height})")
 timestr =  time.strftime("%Y%m%d-%H%M%S")
-writer= cv2.VideoWriter(f'{path_videos}/video_{timestr}.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 10, (width,height))
+writer= cv2.VideoWriter(f'{path_videos}/video_{timestr}.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 20, (width,height))
 
 while True:
     ret,frame= cap.read()
@@ -20,7 +20,7 @@ while True:
     writer.write(frame)
     cv2.imshow('frame', frame)
 
-    if cv2.waitKey(100) & 0xFF == ord('s'):
+    if cv2.waitKey(50) & 0xFF == ord('s'):
         break
 
 cap.release()
